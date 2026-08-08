@@ -29,6 +29,7 @@
 
     <!-- Customized Bootstrap Stylesheet -->
     <link href="css/style.css" rel="stylesheet" />
+    <link href="css/navbar.css" rel="stylesheet" />
   </head>
 
   <body data-spy="scroll" data-target=".navbar" data-offset="51">
@@ -41,24 +42,27 @@
     <!-- Header End -->
 
     <!-- About Start -->
-    <div data-include="components/about.html"></div>
+    <div data-include="pages/about.html"></div>
     <!-- About End -->
 
     <!-- Qualification Start -->
-    <div data-include="components/qualification.html"></div>
+    <div data-include="pages/qualification.html"></div>
     <!-- Qualification End -->
 
     <!-- Skills -->
-    <!-- <div data-include="components/skills.html"></div> -->
+    <!-- <div data-include="pages/skills.html"></div> -->
 
     <!-- Portfolio Start -->
-    <div data-include="components/portfolio.html"></div>
+    <div data-include="pages/portfolio.html"></div>
     <!-- Portfolio End -->
 
     <!-- Footer Start -->
     <div data-include="components/footer.html"></div>
     <!-- Footer End -->
 
+    <!-- Contact Modal -->
+    <div data-include="components/modals/contact_modal.html"></div>
+    
     <!-- Scroll to Bottom -->
     <i class="fa fa-2x fa-angle-down text-white scroll-to-bottom"></i>
 
@@ -86,11 +90,14 @@
     <script src="js/main.js"></script>
 
     <!-- Component Loader -->
-
     <script src="js/include.js"></script>
+    <script src="js/navigation.js"></script>
+    <!-- Data Loader-->
     <script src="api/fetch.js"></script>
+
     <script src="js/qualification.js"></script>
     <script src="js/portfolio.js"></script>
+    <script src="js/footer.js"></script>
   </body>
 </html>
 <!-- End of Project -->

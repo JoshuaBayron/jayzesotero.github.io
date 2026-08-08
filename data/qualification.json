@@ -1,0 +1,73 @@
+{
+    "education": [
+      {
+        "title": "ACTION BATCH 39",
+        "organization": "Advance World Solution. Inc.",
+        "date": "2024",
+        "description": "Intensive trainings for General IT knowledge, N5-Nihongo, and Technologies"
+      },
+      {
+        "title": "Bachelor of Science in Information Technology",
+        "organization": "Benguet State University",
+        "date": "2020 - 2024",
+        "description": "Gaining practical skills in programming languages (Java, C#, PHP), databases (MySQL, SQLite), and web development (HTML, CSS, JavaScript)."
+      },
+      {
+        "title": "Creative Web Design",
+        "organization": "Northridge Institute of Business and Technology Inc.",
+        "date": "2023",
+        "description": "Acquired practical skills and knowledge in designing user-friendly and visually appealing websites."
+      },
+      {
+        "title": "Information and Communication Technology",
+        "organization": "Baguio City National Science High School",
+        "date": "2018 - 2020",
+        "description": "Gaining a strong foundation in multimedia production, computer programming, graphic design, and digital communication."
+      },
+      {
+        "title": "Traditional Animation NC II",
+        "organization": "Cordillera School of Digital Arts",
+        "date": "2019 - 2020",
+        "description": "Dedicated and passionate individual with a strong interest in animation, sought to enhance my skills and knowledge."
+      }
+    ],
+  
+    "experience": [
+      {
+        "title": "Asst. Research & Development Engineer",
+        "organization": "Advance World Solution. Inc.",
+        "date": "July 2026 - Present",
+        "description": "Initiated and led the digitization of some internal services to improve operational efficiency within the company."
+      },
+      {
+        "title": "Jr. Research & Development Engineer",
+        "organization": "Advance World Solution. Inc.",
+        "date": "July 2024 - July 2026",
+        "description": "Maintained and enhanced a key internal company platform, improving data consistency, security, and integrity while ensuring strict compliance with data confidentiality standards."
+      },
+      {
+        "title": "Advance World Solution - Intern",
+        "organization": "Advance World Solution. Inc.",
+        "date": "Jan 2024 - May 2024",
+        "description": "Frontend developer and API Integration for AWS internal services."
+      },
+      {
+        "title": "Web Designer",
+        "organization": "Northridge Institute of Business and Technology Inc.",
+        "date": "July 2023",
+        "description": "Designing user-friendly and visually appealing websites."
+      },
+      {
+        "title": "Administrative Aide II",
+        "organization": "Baguio City Hall",
+        "date": "July 2022",
+        "description": "Assisted the Secretariat Committee of the General Service Office."
+      },
+      {
+        "title": "Animator II",
+        "organization": "Cordillera School of Digital Arts",
+        "date": "Oct 2019 - March 2020",
+        "description": "Created captivating visual storytelling through various animation techniques, software, and artistic principles."
+      }
+    ]
+  }

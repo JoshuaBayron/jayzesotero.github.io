@@ -1,0 +1,24 @@
+{
+    "portfolio": [
+        {
+            "filter-type": "first",
+            "image-src": "img/Design1.png",
+            "title": "Design1"
+        },
+        {
+            "filter-type": "second",
+            "image-src": "img/Development.png",
+            "title": "Development"
+        },
+        {
+            "filter-type": "third",
+            "image-src": "img/Games1.png",
+            "title": "Games1"
+        },
+        {
+            "filter-type": "first",
+            "image-src": "img/Design2.png",
+            "title": "Design2"
+        }
+    ]
+}

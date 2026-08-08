@@ -1,0 +1,24 @@
+{
+    "navigation": [
+      {
+        "id": "home",
+        "label": "Home",
+        "isActive": true
+      },
+      {
+        "id": "about",
+        "label": "About",
+        "isActive": false
+      },
+      {
+        "id": "qualification",
+        "label": "Qualification",
+        "isActive": false
+      },
+      {
+        "id": "portfolio",
+        "label": "Portfolio",
+        "isActive": false
+      }
+    ]
+  }

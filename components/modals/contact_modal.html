@@ -1,0 +1,136 @@
+<div
+    class="modal fade"
+    id="contactModal"
+    tabindex="-1"
+    role="dialog"
+    aria-labelledby="contactModalLabel"
+    aria-hidden="true"
+>
+    <div
+        class="modal-dialog modal-dialog-centered"
+        role="document"
+    >
+
+        <div class="modal-content">
+
+            <!-- Header -->
+            <div class="modal-header">
+
+                <h5
+                    class="modal-title"
+                    id="contactModalLabel"
+                >
+                    Contact Me
+                </h5>
+
+                <button
+                    type="button"
+                    class="close"
+                    data-dismiss="modal"
+                    aria-label="Close"
+                >
+                    <span aria-hidden="true">
+                        &times;
+                    </span>
+                </button>
+
+            </div>
+
+
+            <!-- Body -->
+            <div class="modal-body">
+
+                <form id="contactForm">
+
+                    <div class="form-group">
+
+                        <label for="senderName">
+                            Name
+                        </label>
+
+                        <input
+                            type="text"
+                            class="form-control"
+                            id="senderName"
+                            name="name"
+                            required
+                        />
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="senderEmail">
+                            Email
+                        </label>
+
+                        <input
+                            type="email"
+                            class="form-control"
+                            id="senderEmail"
+                            name="email"
+                            required
+                        />
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="emailSubject">
+                            Subject
+                        </label>
+
+                        <input
+                            type="text"
+                            class="form-control"
+                            id="emailSubject"
+                            name="subject"
+                            required
+                        />
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="emailMessage">
+                            Message
+                        </label>
+
+                        <textarea
+                            class="form-control"
+                            id="emailMessage"
+                            name="message"
+                            rows="5"
+                            required
+                        ></textarea>
+
+                    </div>
+
+
+                    <div
+                        id="contactStatus"
+                        class="mb-3"
+                        style="display: none;"
+                    ></div>
+
+
+                    <button
+                        type="submit"
+                        id="contactSubmit"
+                        class="btn btn-primary"
+                    >
+                        <i class="fa fa-paper-plane mr-2"></i>
+                        Send Message
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+</div>

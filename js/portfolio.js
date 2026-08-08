@@ -18,9 +18,16 @@ function renderPortfolio(portfolio) {
               src="${item["image-src"]}"
               alt="${item.title || "Portfolio image"}"
             >
+
             <div class="portfolio-btn bg-primary d-flex align-items-center justify-content-center">
-              <a href="${item["image-src"]}" data-lightbox="portfolio">
-                <i class="fa fa-eye text-white" style="font-size: 40px;"></i>
+              <a
+                href="${item["image-src"]}"
+                data-lightbox="portfolio"
+              >
+                <i
+                  class="fa fa-eye text-white"
+                  style="font-size: 40px;"
+                ></i>
               </a>
             </div>
 
@@ -43,7 +50,12 @@ function initializePortfolioFilter() {
     return;
   }
 
-  // Destroy existing Isotope instance if there is one
+  if (typeof $.fn.isotope !== "function") {
+    console.error("Isotope is not loaded.");
+    return;
+  }
+
+  // Destroy previous Isotope instance if it exists
   if ($portfolio.data("isotope")) {
     $portfolio.isotope("destroy");
   }
@@ -54,12 +66,13 @@ function initializePortfolioFilter() {
     layoutMode: "fitRows"
   });
 
-  // Filtering
+  // Portfolio filtering
   $("#portfolio-flters li")
-    .off("click")
-    .on("click", function () {
+    .off("click.portfolio")
+    .on("click.portfolio", function () {
 
       $("#portfolio-flters li").removeClass("active");
+
       $(this).addClass("active");
 
       const filterValue = $(this).attr("data-filter");
@@ -67,12 +80,53 @@ function initializePortfolioFilter() {
       $portfolio.isotope({
         filter: filterValue
       });
+
     });
 
-  // Recalculate after images have loaded
-  $portfolio.imagesLoaded(function () {
-    $portfolio.isotope("layout");
-  });
+
+  // Re-layout after images finish loading
+  const images = $portfolio.find("img");
+
+  if (images.length) {
+
+    let loadedImages = 0;
+
+    images.each(function () {
+
+      if (this.complete) {
+        loadedImages++;
+
+        if (loadedImages === images.length) {
+          $portfolio.isotope("layout");
+        }
+
+      } else {
+
+        $(this).one("load.portfolio", function () {
+
+          loadedImages++;
+
+          if (loadedImages === images.length) {
+            $portfolio.isotope("layout");
+          }
+
+        });
+
+        $(this).one("error.portfolio", function () {
+
+          loadedImages++;
+
+          if (loadedImages === images.length) {
+            $portfolio.isotope("layout");
+          }
+
+        });
+
+      }
+
+    });
+
+  }
 }
 
 

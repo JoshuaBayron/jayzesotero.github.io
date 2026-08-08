@@ -1,28 +1,80 @@
-document.addEventListener("DOMContentLoaded", async () => {
+document.addEventListener(
+    "DOMContentLoaded",
+    async function () {
 
-    const components = document.querySelectorAll("[data-include]");
+        const components =
+            document.querySelectorAll(
+                "[data-include]"
+            );
 
-    await Promise.all(
-        [...components].map(async (element) => {
 
-            const file = element.getAttribute("data-include");
+        await Promise.all(
 
-            try {
-                const response = await fetch(file);
+            [...components].map(
+                async function (element) {
 
-                if (!response.ok) {
-                    throw new Error(
-                        `Failed to load ${file}: ${response.status}`
-                    );
+                    const file =
+                        element.getAttribute(
+                            "data-include"
+                        );
+
+
+                    try {
+
+                        console.log(
+                            `Loading component: ${file}`
+                        );
+
+
+                        const response =
+                            await fetch(file);
+
+
+                        if (!response.ok) {
+
+                            throw new Error(
+                                `Failed to load ${file}: ${response.status}`
+                            );
+
+                        }
+
+
+                        const html =
+                            await response.text();
+
+
+                        element.innerHTML =
+                            html;
+
+
+                        console.log(
+                            `Loaded component: ${file}`
+                        );
+
+
+                    } catch (error) {
+
+                        console.error(
+                            `Component loading error: ${file}`,
+                            error
+                        );
+
+                    }
+
                 }
+            )
 
-                element.innerHTML = await response.text();
+        );
 
-            } catch (error) {
-                console.error(error);
-            }
-        })
-    );
 
-    document.dispatchEvent(new Event("componentsLoaded"));
-});
+        console.log(
+            "All components loaded."
+        );
+
+
+        document.dispatchEvent(
+            new Event("componentsLoaded")
+        );
+
+    }
+);

@@ -1,80 +1,34 @@
-document.addEventListener(
-    "DOMContentLoaded",
-    async function () {
+async function loadIncludes() {
+  const components = document.querySelectorAll("[data-include]");
 
-        const components =
-            document.querySelectorAll(
-                "[data-include]"
-            );
+  await Promise.all(
+    [...components].map(async function (element) {
+      const file = element.getAttribute("data-include");
 
+      try {
+        const response = await fetch(file);
 
-        await Promise.all(
+        if (!response.ok) {
+          throw new Error(`Failed to load ${file}: ${response.status}`);
+        }
 
-            [...components].map(
-                async function (element) {
+        const html = await response.text();
+        element.innerHTML = html;
+      } catch (error) {
+        console.error(`Component loading error: ${file}`, error);
+      }
+    })
+  );
 
-                    const file =
-                        element.getAttribute(
-                            "data-include"
-                        );
+  document.dispatchEvent(new Event("componentsLoaded"));
+}
 
+document.addEventListener("DOMContentLoaded", async function () {
+  const mappingsCreated = createIncludeMappings();
 
-                    try {
+  if (!mappingsCreated) {
+    return;
+  }
 
-                        console.log(
-                            `Loading component: ${file}`
-                        );
-
-
-                        const response =
-                            await fetch(file);
-
-
-                        if (!response.ok) {
-
-                            throw new Error(
-                                `Failed to load ${file}: ${response.status}`
-                            );
-
-                        }
-
-
-                        const html =
-                            await response.text();
-
-
-                        element.innerHTML =
-                            html;
-
-
-                        console.log(
-                            `Loaded component: ${file}`
-                        );
-
-
-                    } catch (error) {
-
-                        console.error(
-                            `Component loading error: ${file}`,
-                            error
-                        );
-
-                    }
-
-                }
-            )
-
-        );
-
-
-        console.log(
-            "All components loaded."
-        );
-
-
-        document.dispatchEvent(
-            new Event("componentsLoaded")
-        );
-
-    }
-);
+  await loadIncludes();
+});

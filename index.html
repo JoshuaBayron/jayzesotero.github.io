@@ -65,13 +65,17 @@
     <!-- Component Loader -->
     <script src="js/include-mappings.js"></script>
     <script src="js/include.js"></script>
-    <script src="js/navigation.js"></script>
-    <!-- Data Loader-->
+    
+    <!-- API functions must load first -->
     <script src="api/fetch.js"></script>
-
+    
+    <!-- Components that use the API -->
     <script src="js/qualification.js"></script>
     <script src="js/portfolio.js"></script>
     <script src="js/footer.js"></script>
+    
+    <!-- Other functionality -->
+    <script src="js/navigation.js"></script>
   </body>
 </html>
 <!-- End of Project -->

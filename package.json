@@ -1,0 +1,26 @@
+{
+  "name": "joshua-bayron-portfolio",
+  "version": "1.0.0",
+  "description": "Joshua Bayron's Portfolio Website",
+  "type": "module",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"No tests specified\" && exit 0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JoshuaBayron/jayzesotero.github.io.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JoshuaBayron/jayzesotero.github.io/issues"
+  },
+  "homepage": "https://github.com/JoshuaBayron/jayzesotero.github.io#readme",
+  "dependencies": {
+    "@vercel/analytics": "^2.0.1"
+  }
+}
